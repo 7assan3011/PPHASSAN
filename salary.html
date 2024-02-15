@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, button {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+  <label for="number">:سعرك في سوق الانتقالات</label>
+  <input type="number" id="number">
+
+  <label for="team">Select Team:</label>
+  <select id="team">
+    <option value="1">Bayern Munchen</option>
+    <option value="2">Manchester City</option>
+    <option value="3">Liverpool</option>
+<option value="4">Chelsea</option>
+<option value="5">Paris Saint-Germain (PSG)</option>
+<option value="6">Real Madrid</option>
+<option value="7">Manchester United</option>
+<option value="8">Juventus</option>
+<option value="9">Barcelona</option>
+<option value="10">Atletico Madrid</option>
+<option value="11">Borussia Dortmund</option>
+<option value="12">Arsenal</option>
+<option value="13">Tottenham Hotspur</option>
+<option value="14">Inter Milan</option>
+<option value="15">AC Milan</option>
+<option value="16">Napoli</option>
+<option value="17">RB Leipzig</option>
+<option value="18">Sevilla</option>
+<option value="19">Lazio</option>
+<option value="20">AS Roma</option>
+<option value="21">Bayer Leverkusen</option>
+<option value="22">Villarreal</option>
+<option value="23">Wolverhampton</option>
+<option value="24">Everton</option>
+<option value="25">Leicester City</option>
+<option value="26">SSC Napoli</option>
+<option value="27">West Ham United</option>
+<option value="28">Lyon</option>
+<option value="29">SS Lazio</option>
+<option value="30">Eintracht Frankfurt</option>
+<option value="31">AS Monaco</option>
+<option value="32">Fiorentina</option>
+<option value="33">Crystal Palace</option>
+<option value="34">Leeds United</option>
+<option value="35">Aston Villa</option>
+<option value="36">VfL Wolfsburg</option>
+<option value="37">Borussia Monchengladbach</option>
+<option value="38">Real Betis</option>
+<option value="39">Lille</option>
+<option value="40">Udinese Calcio</option>
+<option value="41">Southampton</option>
+<option value="42">Celta Vigo</option>
+<option value="43">Real Sociedad</option>
+<option value="44">Newcastle United</option>
+<option value="45">Sassuolo</option>
+<option value="46">Hertha BSC</option>
+<option value="47">Torino</option>
+<option value="48">Bologna</option>
+<option value="49">Espanyol</option>
+<option value="50">SC Freiburg</option>
+<option value="51">FC Augsburg</option>
+<option value="52">Brighton & Hove Albion</option>
+<option value="53">West Bromwich Albion</option>
+<option value="54">Real Betis</option>
+<option value="55">Fulham</option>
+<option value="56">Genoa</option>
+<option value="57">Sampdoria</option>
+<option value="58">Parma Calcio 1913</option>
+<option value="59">Udinese</option>
+<option value="60">Cagliari</option>
+<option value="61">SD Huesca</option>
+<option value="62">Spezia</option>
+<option value="63">Benevento</option>
+<option value="64">Elche</option>
+<option value="65">Cadiz CF</option>
+<option value="66">Alaves</option>
+<option value="67">Levante</option>
+<option value="68">Arminia Bielefeld</option>
+<option value="69">Cologne</option>
+<option value="70">Mainz 05</option>
+<option value="71">Burnley</option>
+<option value="72">Sheffield United</option>
+<option value="73">Norwich City</option>
+  </select>
+
+  <button onclick="calculate()">Calculate</button>
+
+  <p id="result"></p>
+  
+  <script>
+
+  function calculate() {
+      var number = parseFloat(document.getElementById("number").value);
+      var team = parseInt(document.getElementById("team").value);
+      var result;
+
+      if (team >= 1 && team <= 16) {
+        result = Math.floor(number * 0.07);
+      } else if (team >= 17 && team <= 33) {
+        result = Math.floor(number * 0.04);
+      } else if (team >= 34 && team <= 54) {
+        result = Math.floor(number * 0.02);
+      } else if (team >= 55 && team <= 73) {
+        result = Math.floor(number * 0.007);
+      } else {
+        result = "Please select a valid team from the available list.";
+      }
+
+      document.getElementById("result").textContent = "Salary is: " + result.toLocaleString();
+    }
+  </script>
+
+</body>
+</html>
