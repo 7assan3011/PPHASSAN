@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AS ENPASIOL</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  h1 {
+    margin: 0;
+  }
+  nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  main {
+    padding: 20px;
+  }
+  article {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+  .titulo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .contenido {
+    font-size: 16px;
+  }
+</style>
+<script>
+  var rumores = [
+    {'en': 'could join Bayern Munich', 'ar': 'قد ينضم إلى بايرن ميونخ'},
+    {'en': 'is in talks to join Real Madrid', 'ar': 'يجري محادثات للانضمام إلى ريال مدريد'},
+    {'en': 'will be transferred to Barcelona in the next transfer window', 'ar': 'سينتقل إلى برشلونة في نافذة الانتقالات القادمة'},
+    {'en': 'is rumored to be on Manchester United\'s radar', 'ar': 'يُشاع أنه في رؤية مانشستر يونايتد'},
+    {'en': 'is coveted by PSG for the upcoming season', 'ar': 'مطمون من قبل باريس سان جيرمان للموسم القادم'},
+    {'en': 'He is wanted by the international police on charges of harassment', 'ar': 'مطلوب من الشرطة العالمية لاتهامه بقضية تحرش'},
+    {'en': 'He was in the hospital and suffered a brain injury', 'ar': 'في المستشفى و تعرضه لاصابة في دماغه'}
+  ];
+
+  function agregarRumor() {
+    var nombre = document.getElementById('nombre').value;
+    var rumor = rumores[Math.floor(Math.random() * rumores.length)];
+    
+    var tituloRumor = nombre + ' ' + rumor['en'];
+    var contenidoRumor = 'هناك اخبار تقول ان ' + nombre + ' ' + rumor['ar'] + '.';
+
+    document.getElementById('rumor-titulo').textContent = tituloRumor;
+    document.getElementById('rumor-contenido').textContent = contenidoRumor;
+  }
+</script>
+</head>
+<body>
+  <header>
+    <h1>as Espanyol</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="agregarRumor()">اضغط هنا للاخبار</a>
+  </nav>
+  <main>
+    <article id="rumor">
+      <div class="titulo" id="rumor-titulo">شائعة حول انتقال محتمل لـ</div>
+      <div class="contenido" id="rumor-contenido">يرجى إدخال اسمك باللغة العربية.</div>
+    </article>
+  </main>
+  <footer>
+    <input type="text" id="nombre" placeholder="الرجاء إدخال اسمك">
+  </footer>
+</body>
+</html>
